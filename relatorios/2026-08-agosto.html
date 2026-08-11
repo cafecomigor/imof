@@ -1,0 +1,311 @@
+<title>IMOF — Cronograma de Conteúdo · Agosto/Setembro 2026</title>
+<style>
+  :root {
+    --ink: #0D3335;
+    --ink-2: #123E41;
+    --teal: #32B2B9;
+    --teal-deep: #227D82;
+    --teal-tint: #E6F5F5;
+    --grey: #D2D2D2;
+    --paper: #FBFBFA;
+    --surface: #FFFFFF;
+    --border: #E1E7E6;
+    --text-soft: #4E6567;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { padding-bottom: 5rem; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2, h3, .serif {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    text-wrap: balance; margin: 0;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--ink);
+    color: #F4FAFA;
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .mark { display: flex; align-items: center; gap: 1.6rem; margin-bottom: 2.8rem; }
+  .mark svg { flex: none; }
+  .wordmark { line-height: 1; }
+  .wordmark .imof {
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 800; font-size: 2.1rem; letter-spacing: 0.01em; color: #FFFFFF;
+  }
+  .wordmark .sub {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin-top: 0.35rem;
+  }
+
+  .hero .eyebrow {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin: 0 0 0.9rem;
+  }
+  .hero h1 { font-size: clamp(1.8rem, 4.4vw, 2.7rem); color: #FFFFFF; line-height: 1.18; max-width: 22ch; }
+  .hero .desc { color: #BFDCDC; font-size: 1.02rem; margin-top: 0.9rem; max-width: 52ch; line-height: 1.6; }
+
+  .meta-strip {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.2rem;
+  }
+  .meta-strip .pill {
+    font-size: 0.8rem; padding: 0.4rem 0.85rem; border-radius: 999px;
+    background: rgba(50,178,185,0.14); border: 1px solid rgba(50,178,185,0.4);
+    color: #D7F0EF;
+  }
+  .meta-strip .pill b { color: #FFFFFF; }
+
+  /* ---------- Body ---------- */
+  section.intro { padding: 3rem 0 1rem; }
+  section.intro p {
+    color: var(--text-soft); font-size: 1.02rem; line-height: 1.7; max-width: 62ch;
+  }
+
+  section.schedule { padding: 1.5rem 0 3rem; }
+  .month-label {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal-deep); border-bottom: 1px solid var(--border);
+    padding-bottom: 0.9rem; margin-bottom: 1.6rem;
+  }
+
+  article.post {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 4px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.1rem;
+  }
+  .post-top {
+    display: flex; align-items: baseline; gap: 0.9rem; flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .date-badge {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-weight: 600; font-size: 0.92rem; color: var(--ink);
+    background: var(--teal-tint); padding: 0.2rem 0.65rem; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .weekday { font-size: 0.78rem; color: var(--text-soft); letter-spacing: 0.03em; }
+  .post h3 { font-size: 1.18rem; color: var(--ink); margin-top: 0.3rem; }
+  .legend {
+    color: var(--text-soft); font-size: 0.96rem; line-height: 1.7;
+    margin-top: 0.8rem; max-width: 66ch; white-space: pre-line;
+  }
+  .legend .tags { display: block; margin-top: 0.6rem; color: var(--teal-deep); font-size: 0.9rem; }
+
+  footer.doc-foot {
+    padding-top: 2.2rem; margin-top: 1rem; border-top: 1px solid var(--border);
+    color: var(--text-soft); font-size: 0.85rem; line-height: 1.6;
+  }
+  footer.doc-foot .brandline {
+    display: flex; align-items: center; gap: 0.6rem; margin-top: 1rem;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif; color: var(--ink-2);
+    font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  footer.doc-foot .brandline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 3.2rem 0 2.6rem; }
+    article.post { padding: 1.3rem 1.2rem; }
+    .mark { gap: 1rem; }
+    .mark svg { width: 52px; height: 52px; }
+  }
+</style>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="mark">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="32" cy="32" rx="26" ry="14" stroke="#32B2B9" stroke-width="2"/>
+        <circle cx="32" cy="32" r="10" stroke="#32B2B9" stroke-width="2"/>
+        <circle cx="32" cy="32" r="3.2" fill="#32B2B9"/>
+        <line x1="32" y1="4" x2="32" y2="20" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="32" y1="44" x2="32" y2="60" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="4" y1="32" x2="20" y2="32" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="44" y1="32" x2="60" y2="32" stroke="#32B2B9" stroke-width="2"/>
+      </svg>
+      <div class="wordmark">
+        <div class="imof">IMOF</div>
+        <div class="sub">Instituto Médico Oftalmológico Foz do Iguaçu</div>
+      </div>
+    </div>
+
+    <p class="eyebrow">Cronograma de conteúdo · Redes sociais</p>
+    <h1>Cirurgia Refrativa</h1>
+    <p class="desc">Planejamento de postagens educativas para Instagram, com foco em gerar consciência sobre cirurgia refrativa — sem promessa de resultado, em conformidade com as diretrizes do CFM.</p>
+
+    <div class="meta-strip">
+      <span class="pill">Período: <b>17/08 – 23/09/2026</b></span>
+      <span class="pill">Ritmo: <b>2 posts/semana</b> (seg · qua)</span>
+      <span class="pill"><b>12</b> postagens</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="schedule">
+    <p class="month-label">Agosto — Setembro 2026</p>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">17/08</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>Cirurgia refrativa dói?</h3>
+      <div class="legend">Ainda evita pensar em cirurgia refrativa por medo de doer?
+
+A maior parte do desconforto que imaginamos vem do que já ouvimos falar — não do que realmente acontece. Durante o procedimento, colírios anestésicos deixam o olho sem sensibilidade à dor. O que pode existir depois é um leve incômodo, como um cisco no olho, que passa em pouco tempo.
+
+Se você tem essa dúvida, deixa aqui nos comentários — a gente responde por aqui.<span class="tags">#saúdeocular #oftalmologia #cirurgiarefrativa #IMOF #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">19/08</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>Mesmo grau, cirurgias diferentes</h3>
+      <div class="legend">Duas pessoas. Mesmo grau. Cirurgias diferentes. Por quê?
+
+A espessura da córnea, o formato do olho e até a rotina de cada pessoa influenciam qual técnica é indicada — LASIK, PRK ou lente intraocular fácica. Não existe "a cirurgia": existe a cirurgia certa pra cada olho.
+
+Salva esse post se você já ouviu falar de alguma dessas técnicas e quer entender melhor.<span class="tags">#cirurgiarefrativa #lasik #prk #oftalmologia #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">24/08</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>Conheça a estrutura do IMOF</h3>
+      <div class="legend">Um espaço pensado pra cuidar da sua visão em cada detalhe.
+
+Do acolhimento na recepção aos equipamentos de última geração nas salas de exame, o IMOF foi estruturado pra oferecer cuidado oftalmológico completo, tudo no mesmo lugar.
+
+Já conhece nossa estrutura? Vem conhecer de perto.<span class="tags">#IMOF #FozDoIguaçu #oftalmologia #institucional</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">26/08</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>Acordar já enxergando o teto</h3>
+      <div class="legend">Aquele segundo em que você procura o óculos antes de enxergar qualquer coisa.
+
+Pra quem usa óculos ou lentes há anos, esse gesto virou automático. Mas será que ele precisa continuar sendo? Existem hoje técnicas que reduzem — e em muitos casos eliminam — essa dependência.
+
+Marca aquele amigo que não larga o óculos nem pra dormir.<span class="tags">#liberdadevisual #miopia #cirurgiarefrativa #oftalmologia #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">31/08</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>Dia Nacional de Combate ao Fumo</h3>
+      <div class="legend">Fumar não afeta só os pulmões — os olhos também sentem.
+
+O tabagismo é um fator de risco reconhecido para catarata, degeneração macular relacionada à idade e olho seco. No Dia Nacional de Combate ao Fumo (29/08), um lembrete: cuidar da visão também passa por hábitos do dia a dia.
+
+Compartilha esse post com alguém que precisa saber disso.<span class="tags">#diadocombateaofumo #saudeocular #oftalmologia #IMOF #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">02/09</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>A tecnologia que corrige em minutos</h3>
+      <div class="legend">Um feixe de luz remodelando a córnea, em tempo real.
+
+A tecnologia usada nas cirurgias a laser existe há décadas e é constantemente aprimorada. Ela mapeia o olho com precisão de micrômetros antes de qualquer ajuste ser feito. Ciência, não mágica.
+
+Comenta aqui se você não fazia ideia de como isso funcionava.<span class="tags">#tecnologia #oftalmologia #laser #cirurgiarefrativa #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">07/09</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>Depois dos 40, ainda dá pra operar?</h3>
+      <div class="legend">Depois dos 40, ainda dá pra fazer cirurgia refrativa?
+
+Essa é uma das perguntas mais comuns no consultório. A resposta depende de fatores como a presbiopia (a "vista cansada") e a saúde geral do olho — não só da idade em si. Cada caso pede uma avaliação própria.
+
+Você também tinha essa dúvida? Comenta aqui.<span class="tags">#presbiopia #vistacansada #oftalmologia #cirurgiarefrativa #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">09/09</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>Bastidores da equipe médica</h3>
+      <div class="legend">Por trás de cada consulta, uma equipe inteira trabalhando pelo mesmo cuidado.
+
+Médicos, técnicos e equipe de apoio trabalham juntos pra que cada consulta, exame ou procedimento no IMOF seja feito com atenção e precisão.
+
+Deixa aqui um 👏 pra equipe que cuida da visão de tanta gente em Foz.<span class="tags">#IMOF #equipemedica #oftalmologia #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">14/09</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>O que ninguém te conta sobre lente de contato</h3>
+      <div class="legend">Anos de lentes de contato... você já parou pra somar o que isso representa?
+
+Trocas, soluções de limpeza, consultas de acompanhamento, adaptação — usar lente de contato é uma rotina que se repete por anos. Não é sobre certo ou errado, é sobre entender o que existe como alternativa.
+
+Quem aqui já perdeu as contas de quanto já gastou com lentes esse ano?<span class="tags">#lentedecontato #saudeocular #oftalmologia #cirurgiarefrativa #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">16/09</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>Como o oftalmologista decide se você pode operar</h3>
+      <div class="legend">Não é só querer. Tem uma investigação por trás dessa decisão.
+
+Antes de qualquer cirurgia refrativa, uma bateria de exames avalia a espessura da córnea, o grau, a saúde geral do olho e outros fatores. É esse processo que garante segurança na indicação.
+
+Comenta "quero saber" se você quer que a gente detalhe cada exame num próximo post.<span class="tags">#examedevista #oftalmologia #segurança #cirurgiarefrativa #IMOF</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">21/09</span><span class="weekday">segunda-feira</span>
+      </div>
+      <h3>Sua primeira consulta no IMOF</h3>
+      <div class="legend">Primeira vez no IMOF? Veja o que esperar da sua consulta.
+
+Da chegada na recepção até a conversa com o especialista, cada etapa foi pensada pra deixar seu atendimento mais claro e tranquilo.
+
+Salva esse post pra quando for agendar sua consulta.<span class="tags">#IMOF #primeiraconsulta #oftalmologia #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">23/09</span><span class="weekday">quarta-feira</span>
+      </div>
+      <h3>Sinais de que você pode ser candidato</h3>
+      <div class="legend">Sinais de que talvez valha a pena conversar sobre cirurgia refrativa.
+
+Grau estável há pelo menos um ano, cansaço visual recorrente, dependência total de óculos ou lentes no dia a dia — nenhum desses pontos é uma resposta definitiva, mas todos são bons motivos pra buscar uma avaliação.
+
+Se você se identificou com mais de um sinal, talvez seja hora de agendar uma avaliação.<span class="tags">#cirurgiarefrativa #saudeocular #oftalmologia #IMOF #FozDoIguaçu</span></div>
+    </article>
+  </section>
+
+  <footer class="doc-foot">
+    <p>Conteúdo educativo, produzido em conformidade com a Resolução CFM 2.336/2023 — sem promessa de resultado ou sensacionalismo.</p>
+    <div class="brandline"><span class="dot"></span> IMOF · Instituto Médico Oftalmológico Foz do Iguaçu</div>
+  </footer>
+</div>
