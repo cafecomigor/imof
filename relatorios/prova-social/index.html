@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMOF — Roteiros de Prova Social (Cirurgia Refrativa)</title>
+<style>
+  :root {
+    --ink: #0D3335;
+    --ink-2: #123E41;
+    --teal: #32B2B9;
+    --teal-deep: #227D82;
+    --teal-tint: #E6F5F5;
+    --paper: #FBFBFA;
+    --surface: #FFFFFF;
+    --border: #E1E7E6;
+    --text-soft: #4E6567;
+    --ok: #1F7A52;
+    --ok-tint: #E7F4EE;
+    --no: #B23A2E;
+    --no-tint: #F8E9E7;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { padding-bottom: 5rem; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+  h1, h2, h3, .serif {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    text-wrap: balance; margin: 0;
+  }
+
+  /* Hero */
+  .hero { background: var(--ink); color: #F4FAFA; padding: 4rem 0 3rem; }
+  .mark { display: flex; align-items: center; gap: 1.4rem; margin-bottom: 2.4rem; }
+  .wordmark .imof { font-weight: 800; font-size: 1.9rem; color: #FFFFFF; }
+  .wordmark .sub {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin-top: 0.35rem;
+  }
+  .hero .eyebrow {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin: 0 0 0.9rem;
+  }
+  .hero h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); color: #fff; line-height: 1.18; max-width: 20ch; }
+  .hero p.desc { color: #BFDCDC; font-size: 1rem; margin-top: 0.9rem; max-width: 54ch; line-height: 1.6; }
+
+  /* Generic card */
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1.6rem 1.8rem; margin-bottom: 1.4rem;
+  }
+  .card.rail { border-left: 3px solid var(--teal); }
+  section.block { padding: 2.6rem 0 0.4rem; }
+  section.block > h2 {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal-deep); border-bottom: 1px solid var(--border);
+    padding-bottom: 0.9rem; margin-bottom: 1.4rem;
+  }
+  .card h3 { font-size: 1.15rem; color: var(--ink); margin-bottom: 0.5rem; }
+  .card p, .card li { line-height: 1.65; color: var(--text-soft); }
+  .card ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  .card ul li { margin-bottom: 0.35rem; }
+  .card ul li::marker { color: var(--teal); }
+
+  .rules { list-style: none; padding: 0; margin: 0; }
+  .rules li { padding: 0.5rem 0.7rem; border-radius: 4px; margin-bottom: 0.5rem; color: var(--ink); font-size: 0.95rem; line-height: 1.55; }
+  .rules li.yes { background: var(--ok-tint); }
+  .rules li.no { background: var(--no-tint); }
+  .rules li b.tag { font-weight: 700; margin-right: 0.4rem; }
+  .rules li.yes b.tag { color: var(--ok); }
+  .rules li.no b.tag { color: var(--no); }
+
+  /* Video script cards */
+  article.script {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 3px solid var(--teal); border-radius: 6px;
+    padding: 1.7rem 1.9rem; margin-bottom: 1.5rem;
+  }
+  .script-head { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.1rem; }
+  .script-head .meta {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal-deep); margin-bottom: 0.4rem;
+  }
+  .script-head h3 { font-size: 1.2rem; color: var(--ink); }
+  .script-head .goal { color: var(--text-soft); font-size: 0.92rem; margin-top: 0.4rem; }
+
+  .part { margin-bottom: 1.15rem; }
+  .part:last-child { margin-bottom: 0; }
+  .part .plabel {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--ink-2); margin-bottom: 0.4rem;
+  }
+  .part p, .part li { color: var(--text-soft); line-height: 1.65; font-size: 0.95rem; }
+  .part ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+  .part ul li { margin-bottom: 0.3rem; }
+  .part ul li::marker { color: var(--teal); }
+
+  .say {
+    background: var(--teal-tint); border: 1px solid #CDE8E6;
+    border-radius: 5px; padding: 0.85rem 1rem; color: var(--ink);
+    font-size: 1rem; line-height: 1.55; font-weight: 500;
+  }
+  .say.cta { background: var(--ink); color: #EAF6F6; border-color: var(--ink); }
+  .caption {
+    background: #F3F5F4; border: 1px solid var(--border); border-radius: 5px;
+    padding: 0.85rem 1rem; color: var(--ink); font-size: 0.92rem; line-height: 1.6;
+    white-space: pre-line;
+  }
+  .onscreen-list { list-style: none; padding: 0; margin: 0.3rem 0 0; }
+  .onscreen-list li {
+    display: inline-block; background: #EDF1F0; border: 1px solid var(--border);
+    color: var(--ink-2); font-size: 0.82rem; padding: 0.2rem 0.55rem;
+    border-radius: 4px; margin: 0 0.35rem 0.35rem 0; font-style: italic;
+  }
+
+  footer.foot {
+    padding-top: 2.2rem; margin-top: 1.6rem; border-top: 1px solid var(--border);
+    color: var(--text-soft); font-size: 0.85rem; line-height: 1.6;
+  }
+  .backlink { display: inline-block; margin-top: 2rem; color: var(--teal-deep); font-size: 0.85rem; text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 3rem 0 2.4rem; }
+    .card, article.script { padding: 1.3rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="wrap">
+      <div class="mark">
+        <svg width="52" height="52" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="32" cy="32" rx="26" ry="14" stroke="#32B2B9" stroke-width="2"/>
+          <circle cx="32" cy="32" r="10" stroke="#32B2B9" stroke-width="2"/>
+          <circle cx="32" cy="32" r="3.2" fill="#32B2B9"/>
+          <line x1="32" y1="4" x2="32" y2="20" stroke="#32B2B9" stroke-width="2"/>
+          <line x1="32" y1="44" x2="32" y2="60" stroke="#32B2B9" stroke-width="2"/>
+          <line x1="4" y1="32" x2="20" y2="32" stroke="#32B2B9" stroke-width="2"/>
+          <line x1="44" y1="32" x2="60" y2="32" stroke="#32B2B9" stroke-width="2"/>
+        </svg>
+        <div class="wordmark">
+          <div class="imof">IMOF</div>
+          <div class="sub">Instituto Médico Oftalmológico Foz do Iguaçu</div>
+        </div>
+      </div>
+      <p class="eyebrow">Série de prova social · Cirurgia refrativa</p>
+      <h1>Roteiros para gravação</h1>
+      <p class="desc">6 vídeos curtos (Reels), gravados no celular, em primeira pessoa. Pessoa A e Pessoa B contam a experiência delas com a cirurgia refrativa (LASIK). Série avulsa — publicada fora do cronograma mensal.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section class="block">
+      <h2>Como gravar (vale pros 6 vídeos)</h2>
+      <div class="card rail">
+        <ul>
+          <li>Celular <b>na vertical</b> (em pé), apoiado, na altura dos olhos.</li>
+          <li>Fique <b>de frente pra uma janela ou luz</b> — nunca com a luz atrás de você.</li>
+          <li>Lugar silencioso, sem eco (evite banheiro e cômodo vazio).</li>
+          <li>Fale como se estivesse contando pra uma amiga. Pode errar, respirar, refazer.</li>
+          <li><b>Não precisa decorar tudo</b> — só a primeira frase (o gancho). O resto é com as suas palavras.</li>
+          <li>Pode gravar em pedaços; a edição junta.</li>
+          <li>Cada vídeo: <b>40 a 60 segundos</b>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Regras de ouro (importante)</h2>
+      <div class="card">
+        <ul class="rules">
+          <li class="yes"><b class="tag">✔</b> Fale sempre <b>"no meu caso"</b>, "comigo foi assim". Você conta a sua história.</li>
+          <li class="yes"><b class="tag">✔</b> Repita que <b>cada olho é diferente</b> e que quem responde o caso da pessoa é a avaliação.</li>
+          <li class="no"><b class="tag">✘</b> Não prometa resultado — nada de "todo mundo fica bem", "é garantido", "é milagre".</li>
+          <li class="no"><b class="tag">✘</b> Não use superlativo pra clínica ou médico — "melhor de Foz", "médico maravilhoso", "clínica perfeita".</li>
+          <li class="no"><b class="tag">✘</b> Não fale preço/valor. Se perguntarem, "isso é na avaliação".</li>
+          <li class="no"><b class="tag">✘</b> Não dê recomendação médica. Conte só o que <b>orientaram você</b> a fazer.</li>
+        </ul>
+        <p style="margin-top:0.9rem;font-size:0.9rem;"><b>⚠️ Antes de postar:</b> o Dr. Renato revisa os vídeos gravados.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Os 6 roteiros</h2>
+
+      <!-- 1 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 1 · Pessoa A</div>
+          <h3>A decisão: por que eu adiei tanto</h3>
+          <p class="goal">Objetivo: mostrar a hesitação (todo mundo se identifica), sem dramatizar.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho (decore essa frase)</div>
+          <div class="say">"Eu passei anos falando 'ano que vem eu faço' — e não fazia."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">O que contar (com suas palavras, nessa ordem)</div>
+          <ul>
+            <li>Há quanto tempo você usava óculos ou lente e como isso incomodava — dê 1 exemplo real (academia, praia, acordar de noite).</li>
+            <li>O que te segurava: o medo, a desculpa da correria, achar que "não era a hora".</li>
+            <li>O momento em que virou a chave — o que fez você finalmente marcar a avaliação.</li>
+            <li>Deixe claro que foi a <b>sua</b> decisão, no seu tempo.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>Sempre no "eu", "no meu caso".</li>
+            <li>Sem "todo mundo devia fazer" / "é milagre".</li>
+            <li>Sem superlativo pra clínica ou médico.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"Se você também vive adiando, dá o primeiro passo: tem um link na bio pra agendar a avaliação e tirar suas dúvidas."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>"ANO QUE VEM EU FAÇO"</li><li>O QUE ME SEGURAVA</li><li>O PRIMEIRO PASSO É A AVALIAÇÃO</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">Quantos anos você já disse que ia fazer e não fez? 👀
+
+A Pessoa A conta o que segurava a decisão dela — e o que finalmente fez ela marcar a avaliação. Cada pessoa tem o seu tempo, e cada olho é diferente: a avaliação é onde tudo começa.
+
+Link na bio pra agendar a sua.
+#cirurgiarefrativa #lasik #saudeocular #IMOF #FozDoIguaçu</div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 2 · Pessoa B</div>
+          <h3>Medo × realidade: meu maior medo e o que aconteceu</h3>
+          <p class="goal">Objetivo: quebrar a principal objeção emocional (o medo), de forma honesta.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho (adapte pro seu medo real)</div>
+          <div class="say">"Meu maior medo era enxergar tudo durante a cirurgia e surtar."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">O que contar</div>
+          <ul>
+            <li>Qual era o seu medo específico, sem vergonha de admitir (dor, se mexer, "e se der errado", barulho).</li>
+            <li>O que você imaginava que ia ser.</li>
+            <li>O que realmente aconteceu no seu caso — com calma, sem exagerar pra nenhum lado.</li>
+            <li>Se teve algum desconforto, fale com sinceridade ("senti uma pressão", "ardeu um pouco depois").</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>"No meu caso", "comigo foi assim".</li>
+            <li>Não diga "não dói" de forma absoluta — diga o que <b>você</b> sentiu.</li>
+            <li>Sem superlativo pra clínica ou médico.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"Medo é normal. O que ajuda é entender o procedimento de verdade — dá pra tirar todas as dúvidas na avaliação. Link na bio."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>"MEU MAIOR MEDO ERA..."</li><li>O QUE REALMENTE ACONTECEU</li><li>TIRE SUAS DÚVIDAS NA AVALIAÇÃO</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">"E se eu me mexer no meio da cirurgia?"
+
+A Pessoa B tinha esse medo — e conta como foi na real. Medo é normal, e a melhor forma de lidar com ele é informação. Cada caso é avaliado individualmente.
+
+Link na bio pra agendar.
+#medodacirurgia #cirurgiarefrativa #lasik #IMOF</div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 3 · Pessoa A</div>
+          <h3>O dia da cirurgia: como foi, quanto tempo durou</h3>
+          <p class="goal">Objetivo: desmistificar o procedimento — mostrar que é rápido e organizado.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho</div>
+          <div class="say">"Eu fiquei mais tempo na sala de espera do que na cirurgia em si."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">O que contar</div>
+          <ul>
+            <li>A chegada: horário, o que pediram pra levar / não levar, quem te acompanhou.</li>
+            <li>O preparo antes de entrar (colírio, roupa — só o que você lembra).</li>
+            <li>Quanto tempo você ficou na sala de verdade (fale o <b>seu</b> tempo aproximado).</li>
+            <li>O que você sentiu e enxergou durante — de forma simples.</li>
+            <li>Como foi sair: como enxergava naquele momento, óculos escuros, quem te levou pra casa.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>É o seu relato do seu dia. "No meu caso durou mais ou menos X."</li>
+            <li>Não generalize tempos ("é sempre 10 minutos") — fale o seu.</li>
+            <li>Sem superlativo.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"Parece simples de fora, mas cada etapa é planejada. Quer entender como seria no seu caso? Link na bio pra agendar a avaliação."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>O DIA DA CIRURGIA</li><li>QUANTO TEMPO DUROU DE VERDADE</li><li>COMO EU SAÍ DE LÁ</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">Quanto tempo dura uma cirurgia refrativa?
+
+A Pessoa A conta como foi o dia dela, do momento que chegou até a hora que foi pra casa. Lembrando: cada caso é único e passa por avaliação antes.
+
+Link na bio.
+#cirurgiarefrativa #lasik #diadacirurgia #IMOF #FozDoIguaçu</div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 4 · Pessoa B</div>
+          <h3>A recuperação sem filtro: minhas primeiras 24h e a 1ª semana</h3>
+          <p class="goal">Objetivo: dar uma expectativa realista do pós-operatório.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho</div>
+          <div class="say">"Ninguém tinha me falado que as primeiras horas depois seriam assim."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">O que contar</div>
+          <ul>
+            <li>As primeiras horas em casa: como você se sentiu (luz, ardência, sono), o que ajudou.</li>
+            <li>A rotina de colírios e cuidados que você teve que seguir (sem detalhar dosagem — só a rotina geral).</li>
+            <li>O que você <b>não podia</b> fazer na primeira semana (esfregar o olho, maquiagem, piscina, academia — o que se aplicou a você).</li>
+            <li>Quando você sentiu a visão "assentar" e voltou à rotina (fale o seu tempo).</li>
+            <li>Algo que te surpreendeu no processo.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>"Comigo foi assim" — recuperação varia de pessoa pra pessoa, deixe isso claro.</li>
+            <li>Não minimize ("é tranquilo, não sente nada") nem exagere. Conte o que foi.</li>
+            <li>Não dê recomendação médica — fale só o que <b>orientaram</b> você a fazer.</li>
+            <li>Sem superlativo pra clínica ou médico.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"A recuperação tem regra e acompanhamento. Na avaliação eles explicam tudo isso antes. Link na bio."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>RECUPERAÇÃO SEM FILTRO</li><li>O QUE EU NÃO PODIA FAZER</li><li>QUANDO EU VOLTEI À ROTINA</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">Como é a recuperação de uma cirurgia refrativa?
+
+A Pessoa B conta sem filtro: as primeiras 24h, o que ela não podia fazer e quando voltou à rotina. Cada recuperação é diferente e tem acompanhamento.
+
+Link na bio pra tirar suas dúvidas.
+#recuperacao #cirurgiarefrativa #lasik #IMOF</div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 5 · Pessoa A + Pessoa B</div>
+          <h3>Q&amp;A: as perguntas que vocês sempre mandam</h3>
+          <p class="goal">Objetivo: cobrir as dúvidas soltas, formato leve, as duas revezando.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Como gravar</div>
+          <p>As duas juntas no mesmo vídeo, ou cada uma grava suas respostas e junta na edição. Uma lê a pergunta, a outra responde — ou revezam.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho (uma das duas)</div>
+          <div class="say">"Todo mundo pergunta a mesma coisa quando descobre que a gente fez — então bora responder."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">As perguntas (responda sempre com "no meu caso / comigo")</div>
+          <ul>
+            <li><b>"Dói?"</b> — cada uma diz o que sentiu, durante e depois, sem falar por todo mundo.</li>
+            <li><b>"E se eu piscar ou mexer o olho?"</b> — como foi controlado no caso de vocês (aparelho que segura, colírio, orientação da equipe).</li>
+            <li><b>"Grau alto pode fazer?"</b> — "depende da avaliação de cada olho — no meu caso o grau era mais ou menos [preencher]". Não afirme regra geral.</li>
+            <li><b>"Quanto tempo pra voltar a trabalhar?"</b> — cada uma fala o seu tempo real.</li>
+            <li><b>"Enxerga na hora?"</b> — como foi a visão de vocês nas primeiras horas e dias (turva, melhorando aos poucos).</li>
+            <li><b>"Vale a pena?"</b> — resposta pessoal e sóbria: "pra mim, sim" — sem "todo mundo tem que fazer".</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>Toda resposta é a experiência de vocês. Repitam "cada caso é diferente" / "isso quem responde é a avaliação".</li>
+            <li>Não citem preço. Se perguntarem, "isso é na avaliação".</li>
+            <li>Sem superlativo pra clínica ou médico.</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"Tem uma pergunta que a gente não respondeu? Manda pra gente — ou já agenda tua avaliação no link da bio."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>PERGUNTAS QUE VOCÊS SEMPRE MANDAM</li><li>"DÓI?"</li><li>"GRAU ALTO PODE?"</li><li>"ENXERGA NA HORA?"</li><li>O RESTO É NA AVALIAÇÃO 👉 LINK NA BIO</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">Reunimos as perguntas que mais chegam sobre cirurgia refrativa e a Pessoa A e a Pessoa B responderam com base na experiência delas.
+
+Importante: cada olho é único e só a avaliação individual responde o seu caso.
+
+Link na bio.
+#perguntaserespostas #cirurgiarefrativa #lasik #IMOF #FozDoIguaçu</div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="script">
+        <div class="script-head">
+          <div class="meta">Vídeo 6 · Pessoa A + Pessoa B</div>
+          <h3>O recado: o que a gente diria pra quem tá em cima do muro</h3>
+          <p class="goal">Objetivo: fechar a série, CTA mais forte, tom acolhedor — sem pressão.</p>
+        </div>
+        <div class="part">
+          <div class="plabel">Abertura — o gancho (uma das duas)</div>
+          <div class="say">"Se você chegou até aqui vendo esses vídeos, provavelmente você tá pensando em fazer."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">O que contar</div>
+          <ul>
+            <li>Cada uma dá um conselho curto e honesto pra quem tá indeciso (ex: "não decide por causa de vídeo — decide depois de conversar com um especialista", "tira todas as dúvidas antes", "no meu tempo foi o certo pra mim").</li>
+            <li>Reforçar que a experiência de cada uma foi diferente (medo diferente, recuperação diferente) mesmo tendo feito a mesma cirurgia — LASIK. Cada caso é um caso.</li>
+            <li>Nada de "corre fazer", "não perde tempo". O tom é "se informa e decide com calma".</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Não esquecer</div>
+          <ul>
+            <li>Sem promessa, sem superlativo, sem pressão.</li>
+            <li>"A gente fez LASIK, mas a técnica certa é a que a avaliação indicar pra cada um."</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Fechamento — CTA</div>
+          <div class="say cta">"O primeiro passo não é a cirurgia — é a avaliação. Link na bio pra agendar a sua e conversar com o especialista."</div>
+        </div>
+        <div class="part">
+          <div class="plabel">Texto na tela (sugestões)</div>
+          <ul class="onscreen-list">
+            <li>PRA QUEM TÁ EM CIMA DO MURO</li><li>"A GENTE FEZ A MESMA CIRURGIA — E FOI TUDO DIFERENTE"</li><li>O PRIMEIRO PASSO É A AVALIAÇÃO · LINK NA BIO</li>
+          </ul>
+        </div>
+        <div class="part">
+          <div class="plabel">Legenda do post</div>
+          <div class="caption">Encerrando a série: a Pessoa A e a Pessoa B fizeram a mesma cirurgia (LASIK), mas cada uma viveu o processo de um jeito.
+
+O recado das duas pra quem tá pensando em fazer? Se informe e decida com calma — o primeiro passo é a avaliação.
+
+Link na bio.
+#cirurgiarefrativa #lasik #depoimento #IMOF #FozDoIguaçu</div>
+        </div>
+      </article>
+
+    </section>
+
+    <a class="backlink" href="../../">← Voltar para os cronogramas do IMOF</a>
+
+    <footer class="foot">
+      <p>Material de apoio para gravação — série de prova social. Depoimentos baseados em experiências individuais; não representam garantia de resultado. Conteúdo sujeito à revisão do responsável técnico antes da publicação, em conformidade com a Resolução CFM 2.336/2023.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
