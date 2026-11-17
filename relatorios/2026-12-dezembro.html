@@ -1,0 +1,226 @@
+<title>IMOF — Cronograma de Conteúdo · Dezembro 2026</title>
+<style>
+  :root {
+    --ink: #0D3335;
+    --ink-2: #123E41;
+    --teal: #32B2B9;
+    --teal-deep: #227D82;
+    --teal-tint: #E6F5F5;
+    --grey: #D2D2D2;
+    --paper: #FBFBFA;
+    --surface: #FFFFFF;
+    --border: #E1E7E6;
+    --text-soft: #4E6567;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--paper); color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { padding-bottom: 5rem; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+  h1, h2, h3 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    text-wrap: balance; margin: 0;
+  }
+
+  .hero {
+    background: var(--ink);
+    color: #F4FAFA;
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .mark { display: flex; align-items: center; gap: 1.6rem; margin-bottom: 2.8rem; }
+  .mark svg { flex: none; }
+  .wordmark { line-height: 1; }
+  .wordmark .imof {
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 800; font-size: 2.1rem; letter-spacing: 0.01em; color: #FFFFFF;
+  }
+  .wordmark .sub {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin-top: 0.35rem;
+  }
+
+  .hero .eyebrow {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--teal); margin: 0 0 0.9rem;
+  }
+  .hero h1 { font-size: clamp(1.8rem, 4.4vw, 2.7rem); color: #FFFFFF; line-height: 1.18; max-width: 22ch; }
+  .hero .desc { color: #BFDCDC; font-size: 1.02rem; margin-top: 0.9rem; max-width: 52ch; line-height: 1.6; }
+
+  .meta-strip {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.2rem;
+  }
+  .meta-strip .pill {
+    font-size: 0.8rem; padding: 0.4rem 0.85rem; border-radius: 999px;
+    background: rgba(50,178,185,0.14); border: 1px solid rgba(50,178,185,0.4);
+    color: #D7F0EF;
+  }
+  .meta-strip .pill b { color: #FFFFFF; }
+
+  section.schedule { padding: 3rem 0 1rem; }
+  .month-label {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--teal-deep); border-bottom: 1px solid var(--border);
+    padding-bottom: 0.9rem; margin-bottom: 1.6rem;
+  }
+
+  article.post {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 4px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 1.1rem;
+  }
+  .post-top {
+    display: flex; align-items: baseline; gap: 0.9rem; flex-wrap: wrap;
+    margin-bottom: 0.7rem;
+  }
+  .date-badge {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-weight: 600; font-size: 0.92rem; color: var(--ink);
+    background: var(--teal-tint); padding: 0.2rem 0.65rem; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .weekday { font-size: 0.78rem; color: var(--text-soft); letter-spacing: 0.03em; }
+  .type-badge {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 0.22rem 0.6rem; border-radius: 4px; margin-left: auto;
+  }
+  .type-badge.video { background: var(--ink); color: #EAF6F6; }
+  .type-badge.foto { background: transparent; color: var(--teal-deep); border: 1px solid var(--teal); }
+  .type-badge.especial { background: #F7E9E1; color: #B4552B; }
+  .post h3 { font-size: 1.18rem; color: var(--ink); margin-top: 0.3rem; }
+  .legend {
+    color: var(--text-soft); font-size: 0.96rem; line-height: 1.7;
+    margin-top: 0.8rem; max-width: 66ch; white-space: pre-line;
+  }
+  .legend .tags { display: block; margin-top: 0.6rem; color: var(--teal-deep); font-size: 0.9rem; }
+
+  .next-link {
+    display: block; text-decoration: none; margin-top: 1rem;
+    background: var(--ink); color: #EAF6F6; border-radius: 6px;
+    padding: 1.1rem 1.4rem; font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  }
+  .next-link .small { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.3rem; }
+  .next-link .big { font-size: 1.1rem; }
+
+  footer.doc-foot {
+    padding-top: 2.2rem; margin-top: 1rem; border-top: 1px solid var(--border);
+    color: var(--text-soft); font-size: 0.85rem; line-height: 1.6;
+  }
+  footer.doc-foot .brandline {
+    display: flex; align-items: center; gap: 0.6rem; margin-top: 1rem;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif; color: var(--ink-2);
+    font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  footer.doc-foot .brandline .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 3.2rem 0 2.6rem; }
+    article.post { padding: 1.3rem 1.2rem; }
+    .mark { gap: 1rem; }
+    .mark svg { width: 52px; height: 52px; }
+  }
+</style>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="mark">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="32" cy="32" rx="26" ry="14" stroke="#32B2B9" stroke-width="2"/>
+        <circle cx="32" cy="32" r="10" stroke="#32B2B9" stroke-width="2"/>
+        <circle cx="32" cy="32" r="3.2" fill="#32B2B9"/>
+        <line x1="32" y1="4" x2="32" y2="20" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="32" y1="44" x2="32" y2="60" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="4" y1="32" x2="20" y2="32" stroke="#32B2B9" stroke-width="2"/>
+        <line x1="44" y1="32" x2="60" y2="32" stroke="#32B2B9" stroke-width="2"/>
+      </svg>
+      <div class="wordmark">
+        <div class="imof">IMOF</div>
+        <div class="sub">Instituto Médico Oftalmológico Foz do Iguaçu</div>
+      </div>
+    </div>
+
+    <p class="eyebrow">Cronograma de conteúdo · Redes sociais</p>
+    <h1>Fechamento de Dezembro</h1>
+    <p class="desc">Reta final do ano, com o último atendimento em 18/12 e recesso coletivo de 21/12 a 03/01. Conteúdo com convite a agendamento só até 16/12.</p>
+
+    <div class="meta-strip">
+      <span class="pill">Período: <b>09/12 – 25/12/2026</b></span>
+      <span class="pill">Recesso: <b>21/12 – 03/01</b></span>
+      <span class="pill"><b>4</b> postagens</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="schedule">
+    <p class="month-label">Dezembro 2026</p>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">09/12</span><span class="weekday">quarta-feira</span><span class="type-badge video">Vídeo</span>
+      </div>
+      <h3>Prepare-se: 2027 chega com uma visão nova</h3>
+      <div class="legend">2027 tá chegando... e já pensou em começar o ano com a visão em dia?
+
+Fechar o ano cuidando da sua saúde ocular é um jeito simples de começar 2027 tranquilo.
+
+Fale com a nossa equipe e agende o seu antes do recesso.<span class="tags">#anonovovisaonova #saudeocular #oftalmologia #IMOF #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">14/12</span><span class="weekday">segunda-feira</span><span class="type-badge foto">Foto</span>
+      </div>
+      <h3>O ano está terminando: já pensou no seu check-up?</h3>
+      <div class="legend">O ano está terminando — já pensou em fazer o seu check-up oftalmológico antes de virar a página pra 2027?
+
+Nosso atendimento segue até dia 18/12. Fale com a nossa equipe e agende o seu.<span class="tags">#checkup #saudeocular #oftalmologia #IMOF #FozDoIguaçu</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">16/12</span><span class="weekday">quarta-feira</span><span class="type-badge video">Vídeo</span>
+      </div>
+      <h3>Último lembrete do ano</h3>
+      <div class="legend">Esse é nosso último lembrete do ano sobre a sua visão.
+
+Nosso atendimento segue até o dia 18 de dezembro, e retornamos no dia 4 de janeiro. Se você queria agendar uma avaliação, essa é a reta final do ano.
+
+Fale com a nossa equipe antes do recesso.<span class="tags">#IMOF #FozDoIguaçu #oftalmologia #institucional</span></div>
+    </article>
+
+    <article class="post">
+      <div class="post-top">
+        <span class="date-badge">25/12</span><span class="weekday">sexta-feira</span><span class="type-badge especial">Especial</span>
+      </div>
+      <h3>Feliz Natal + Próspero Ano Novo</h3>
+      <div class="legend">Desejamos a você e sua família um Feliz Natal e um Próspero Ano Novo! 🎄✨
+
+Nosso atendimento entra em recesso de 21/12 a 03/01, retornando normalmente no dia 04/01.
+
+Obrigado por confiar no IMOF em 2026. Nos vemos em 2027!<span class="tags">#feliznatal #prosperoanonovo #IMOF #FozDoIguaçu</span></div>
+    </article>
+
+    <a class="next-link" href="2027-01-janeiro.html">
+      <span class="small">Próximo período</span>
+      <span class="big">Janeiro 2027 — Ano Novo, Visão Nova →</span>
+    </a>
+  </section>
+
+  <footer class="doc-foot">
+    <p>Conteúdo educativo, produzido em conformidade com a Resolução CFM 2.336/2023 — sem promessa de resultado ou sensacionalismo.</p>
+    <div class="brandline"><span class="dot"></span> IMOF · Instituto Médico Oftalmológico Foz do Iguaçu</div>
+  </footer>
+</div>
